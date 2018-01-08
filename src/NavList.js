@@ -2,26 +2,53 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import './NavList.css'
 
+let navListPage = [{
+    title: '/main',
+    content: '運送方式'
+  },
+  {
+    title: '/sub',
+    content: '付款方式'
+  },
+  {
+    title: '/recheck',
+    content: '結帳確認'
+  }]
+
 class NavList extends Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
     return this._showNavList() ? (
       <div className="nav-list">
-        <NavLink className="nav-item" to="/main"><div className="nav-name">運送方式</div></NavLink>
-        <NavLink className="nav-item" to="/sub"><div className="nav-name">付款方式</div></NavLink>
-        <NavLink className="nav-item" to="/complete"><div className="nav-name">結帳完成</div></NavLink>
+        {
+          navListPage.map((item) => 
+            <NavLink className="nav-item" 
+              key={item.title} 
+              to={item.title} 
+              isActive={this._isActive.bind(this, item.title)}>
+
+              <div className="nav-name">{item.content}</div>
+            </NavLink>
+          )
+        }
       </div>
-    ) : '';
+    ) : ''
   }
 
   _showNavList() {
-    let showPage = ['main', 'sub', 'complete']
     let location = this.props.location
-    return showPage.filter((value) => location.includes(value)).length
+    return navListPage.filter(({title}) => location.includes(title)).length
+  }
+
+  _isActive(itemLocation) {
+    let locationIndex = navListPage.findIndex((item) => item.title === this.props.location)
+    let itemLocationIndex = navListPage.findIndex((item) => item.title === itemLocation)
+
+    return locationIndex >= itemLocationIndex
   }
 }
 
-export default NavList;
+export default NavList

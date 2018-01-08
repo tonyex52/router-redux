@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import { CSSTransitionGroup } from 'react-transition-group'
 import NavList from './NavList.js'
+import ShoppingCart from './ShoppingCart.js'
 import Main from './Main.js'
 import Sub from './Sub.js'
-import Complete from './Complete.js'
+import Recheck from './Recheck.js'
 import {
   BrowserRouter as Router,
   Route,
   Link,
-  Redirect
+  Redirect,
+  Switch
 } from 'react-router-dom'
 import './App.css'
 
@@ -20,15 +22,18 @@ class App extends Component {
           <div className="checkout-page">
             <NavList location={location.pathname} />
 
-            <Route path="/main" component={Main} />
-            <Route path="/sub" component={Sub} />
-            <Route path="/complete" component={Complete} />
-            <Redirect to="/main" />
+            <Switch>
+              <Route path="/shoppingcart" exact component={ShoppingCart} />
+              <Route path="/main" exact component={Main} />
+              <Route path="/sub" exact component={Sub} />
+              <Route path="/recheck" exact component={Recheck} />
+              <Redirect to="/shoppingcart" />
+            </Switch>
           </div>
         )}/>
       </Router>
-    );
+    )
   }
 }
 
-export default App;
+export default App

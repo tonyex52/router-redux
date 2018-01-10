@@ -1,10 +1,5 @@
 import React, { Component } from 'react'
 import { CSSTransitionGroup } from 'react-transition-group'
-import NavList from './NavList.js'
-import ShoppingCart from './ShoppingCart.js'
-import Main from './Main.js'
-import Sub from './Sub.js'
-import Recheck from './Recheck.js'
 import {
   BrowserRouter as Router,
   Route,
@@ -12,6 +7,12 @@ import {
   Redirect,
   Switch
 } from 'react-router-dom'
+
+import NavList from './NavList.js'
+import ShoppingCart from './ShoppingCart.js'
+import Main from './Main.js'
+import Sub from './Sub.js'
+import Recheck from './Recheck.js'
 import './App.css'
 
 class App extends Component {

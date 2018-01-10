@@ -6,6 +6,7 @@ class Sub extends Component {
   }
 
   render() {
+  	document.title = '付款方式'
     return (
       456
     );

@@ -6,6 +6,7 @@ class Complete extends Component {
   }
 
   render() {
+  	document.title = '結帳確認'
     return (
       789
     )

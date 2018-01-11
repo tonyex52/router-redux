@@ -5,6 +5,6 @@ export default (state = [], action) => {
  	case GET_ALL_PRODUCTS:
  		return action.products
  	default: 
- 		return []
+ 		return state
  }
 }

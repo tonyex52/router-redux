@@ -11,3 +11,8 @@ export const getAllProducts = () => dispatch => {
 		dispatch(receiveAllProducts(products))
 	})
 }
+
+export const setCheckOutProducts = (selected) => ({
+  type: types.SET_CHECKOUT_PRODUCTS,
+  selected
+})

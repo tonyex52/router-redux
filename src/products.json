@@ -1,5 +1,10 @@
 [
-  {"id": 1, "title": "iPad 4 Mini", "price": 500.01, "inventory": 2},
-  {"id": 2, "title": "H&M T-Shirt White", "price": 10.99, "inventory": 10},
-  {"id": 3, "title": "Charli XCX - Sucker CD", "price": 19.99, "inventory": 5}
+  {"id": 1, "title": "iPad 4 Mini", "price": 500, "num": 1},
+  {"id": 2, "title": "H&M T-Shirt White", "price": 10, "num": 2},
+  {"id": 3, "title": "Charli XCX - Sucker CD", "price": 19, "num": 3},
+  {"id": 4, "title": "IPHONE X", "price": 1000, "num": 4},
+  {"id": 5, "title": "IPHONE 8 plus", "price": 40, "num": 5},
+  {"id": 6, "title": "DENON earphone", "price": 900, "num": 6},
+  {"id": 7, "title": "Logitech mouse", "price": 40, "num": 7},
+  {"id": 8, "title": "APPLE Watch", "price": 5000, "num": 8}
 ]
